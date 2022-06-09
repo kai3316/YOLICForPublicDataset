@@ -145,43 +145,45 @@ cellList160 = [[[0, 512], [64, 576]], [[64, 512], [128, 576]], [[128, 512], [192
 # exit(0)
 
 
-# newCellList = [[[384, 512], [512, 640]],
-#                [[512, 512], [640, 640]], [[640, 512], [768, 640]], [[768, 512], [896, 640]], [[896, 512], [1024, 640]],
-#                [[1024, 512], [1152, 640]], [[1152, 512], [1280, 640]], [[1280, 512], [1408, 640]],
-#                [[1408, 512], [1536, 640]], [[1536, 512], [1664, 640]],
-#                [[128, 640], [256, 768]], [[256, 640], [384, 768]], [[384, 640], [512, 768]], [[512, 640], [640, 768]],
-#                [[640, 640], [768, 768]], [[768, 640], [896, 768]], [[896, 640], [1024, 768]], [[1024, 640], [1152, 768]],
-#                [[1152, 640], [1280, 768]], [[1280, 640], [1408, 768]], [[1408, 640], [1536, 768]], [[1536, 640], [1664, 768]],
-#                [[1664, 640], [1792, 768]], [[1792, 640], [1920, 768]],
-#                [[0, 768], [128, 896]], [[128, 768], [256, 896]], [[256, 768], [384, 896]], [[384, 768], [512, 896]],
-#                [[512, 768], [640, 896]], [[640, 768], [768, 896]], [[768, 768], [896, 896]], [[896, 768], [1024, 896]],
-#                [[1024, 768], [1152, 896]], [[1152, 768], [1280, 896]], [[1280, 768], [1408, 896]],
-#                [[1408, 768], [1536, 896]], [[1536, 768], [1664, 896]], [[1664, 768], [1792, 896]],
-#                [[1792, 768], [1920, 896]], [[1920, 768], [2048, 896]],
-#                [[0, 896], [128, 1024]], [[128, 896], [256, 1024]], [[256, 896], [384, 1024]], [[384, 896], [512, 1024]],
-#                [[512, 896], [640, 1024]], [[640, 896], [768, 1024]], [[768, 896], [896, 1024]],
-#                [[896, 896], [1024, 1024]],
-#                [[1024, 896], [1152, 1024]], [[1152, 896], [1280, 1024]], [[1280, 896], [1408, 1024]],
-#                [[1408, 896], [1536, 1024]], [[1536, 896], [1664, 1024]], [[1664, 896], [1792, 1024]],
-#                [[1792, 896], [1920, 1024]], [[1920, 896], [2048, 1024]]]  # w,h
+newCellList = [[[384, 512], [512, 640]],
+               [[512, 512], [640, 640]], [[640, 512], [768, 640]], [[768, 512], [896, 640]], [[896, 512], [1024, 640]],
+               [[1024, 512], [1152, 640]], [[1152, 512], [1280, 640]], [[1280, 512], [1408, 640]],
+               [[1408, 512], [1536, 640]], [[1536, 512], [1664, 640]],
+               [[128, 640], [256, 768]], [[256, 640], [384, 768]], [[384, 640], [512, 768]], [[512, 640], [640, 768]],
+               [[640, 640], [768, 768]], [[768, 640], [896, 768]], [[896, 640], [1024, 768]],
+               [[1024, 640], [1152, 768]],
+               [[1152, 640], [1280, 768]], [[1280, 640], [1408, 768]], [[1408, 640], [1536, 768]],
+               [[1536, 640], [1664, 768]],
+               [[1664, 640], [1792, 768]], [[1792, 640], [1920, 768]],
+               [[0, 768], [128, 896]], [[128, 768], [256, 896]], [[256, 768], [384, 896]], [[384, 768], [512, 896]],
+               [[512, 768], [640, 896]], [[640, 768], [768, 896]], [[768, 768], [896, 896]], [[896, 768], [1024, 896]],
+               [[1024, 768], [1152, 896]], [[1152, 768], [1280, 896]], [[1280, 768], [1408, 896]],
+               [[1408, 768], [1536, 896]], [[1536, 768], [1664, 896]], [[1664, 768], [1792, 896]],
+               [[1792, 768], [1920, 896]], [[1920, 768], [2048, 896]],
+               [[0, 896], [128, 1024]], [[128, 896], [256, 1024]], [[256, 896], [384, 1024]], [[384, 896], [512, 1024]],
+               [[512, 896], [640, 1024]], [[640, 896], [768, 1024]], [[768, 896], [896, 1024]],
+               [[896, 896], [1024, 1024]],
+               [[1024, 896], [1152, 1024]], [[1152, 896], [1280, 1024]], [[1280, 896], [1408, 1024]],
+               [[1408, 896], [1536, 1024]], [[1536, 896], [1664, 1024]], [[1664, 896], [1792, 1024]],
+               [[1792, 896], [1920, 1024]], [[1920, 896], [2048, 1024]]]  # w,h
 import os
 import cv2
 import numpy as np
 
-# print(len(cellList160))
-windowSize = 128
-size = 2048//windowSize
-def getNewCellList(windowSize):
-    newCellList = []
-    for i in range(0, int(1024 / windowSize)):
-        for j in range(0, int(2048 / windowSize)):
-            newCellList.append([[i * windowSize, j * windowSize], [(i + 1) * windowSize, (j + 1) * windowSize]])
-    return newCellList
-newCellList = getNewCellList(windowSize)
 print(len(newCellList))
+windowSize = 128
+size = 2048 // windowSize
+# def getNewCellList(windowSize):
+#     newCellList = []
+#     for i in range(0, int(1024 / windowSize)):
+#         for j in range(0, int(2048 / windowSize)):
+#             newCellList.append([[i * windowSize, j * windowSize], [(i + 1) * windowSize, (j + 1) * windowSize]])
+#     return newCellList
+# newCellList = getNewCellList(windowSize)
+# print(len(newCellList))
 
 label_dir = '/home/kai/Desktop/Cityscapes/meta/label_imgsForTest'
-txtSave_dir = '/home/kai/Desktop/Cityscapes/meta/test_128_128/'
+txtSave_dir = '/home/kai/Desktop/Cityscapes/meta/test_56_5/'
 if not os.path.exists(txtSave_dir):
     os.makedirs(txtSave_dir)
 imagesList = os.listdir(label_dir)
@@ -251,7 +253,7 @@ for image in imagesList:
     # label_image = cv2.resize(label_image, (2048, 1024))
     # cv2.imshow('label_image', label_image)
     # cv2.waitKey(0)
-    # AllCellLabel = []
+    AllCellLabel = []
     for num_cell, cell in enumerate(newCellList):
         # print(num_cell)
         # if num_cell < 182:
@@ -268,17 +270,15 @@ for image in imagesList:
         label_map[:, num_cell // size, num_cell % size] = cellLabel
         # put the label in the label map
 
-        # AllCellLabel = AllCellLabel + cellLabel.tolist()
+        AllCellLabel = AllCellLabel + cellLabel.tolist()
     # # show the label_image
     # plt.imshow(label_image)
     # plt.show()
     # exit(0)
     # save the label map in the txtSave_dir directory
-    np.save(os.path.join(txtSave_dir, imgName + '.npy'), label_map)
+    # np.save(os.path.join(txtSave_dir, imgName + '.npy'), label_map)
 
-
-
-    # np.savetxt(txtSave_dir + imgName + '.txt', AllCellLabel, fmt='%d')
+    np.savetxt(txtSave_dir + imgName + '.txt', AllCellLabel, fmt='%d')
     # print(AllCellLabel)
     # exit()
 

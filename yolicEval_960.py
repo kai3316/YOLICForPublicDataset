@@ -99,7 +99,7 @@ label_dir = '/home/kai/Desktop/Cityscapes/meta/label_txtForTrain_all3800'
 train_dataset = dataset_Cityscapes(rgb_dir, label_dir, transforms=trans)
 
 rgb_dir = '/home/kai/Desktop/Cityscapes/meta/imgsForTest'
-label_dir = '/home/kai/Desktop/Cityscapes/meta/test56_5'
+label_dir = '/home/kai/Desktop/Cityscapes/meta/test_56_5'
 val_dataset = dataset_Cityscapes(rgb_dir, label_dir, transforms=trans)
 
 num_train_batches = int(len(train_dataset) / batch_size)

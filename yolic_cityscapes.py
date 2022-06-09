@@ -103,7 +103,8 @@ network.load_state_dict(yolic_net)
 # print(network)
 # network.classifier[1] = nn.Linear(1280, 112, bias=True)
 
-# network.load_state_dict(torch.load('/home/kai/Desktop/YOLICForPublicData/mn_cityscapes_128_128/model__epoch_7_loss_0.112673946.pth'))
+network.load_state_dict(torch.load(
+    '/home/kai/Desktop/YOLICForPublicData/mobilenet_v2_cityscapes_128_128_flip1/model__epoch_42_loss_0.088234484.pth'))
 network = network.cuda()
 
 rgb_dir = '/home/kai/Desktop/Cityscapes/meta/imgsForTrain'
